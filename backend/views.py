@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.generics import ListAPIView, CreateAPIView
-from backend.models import react360
-from .serializers import ReactSerializer
+from backend.models import react360, EventTracker
+from .serializers import ReactSerializer, EventSerializer
 
 # Create your views here.
 
@@ -14,3 +14,12 @@ class ReactListView (ListAPIView):
 class ReactCreateView (CreateAPIView):
     queryset = react360.objects.all()
     serializer_class = ReactSerializer
+
+
+class EventListView (ListAPIView):
+    queryset = EventTracker.objects.all()
+    serializer_class = EventSerializer
+
+class EventCreateView (CreateAPIView):
+    queryset = EventTracker.objects.all()
+    serializer_class = EventSerializer
