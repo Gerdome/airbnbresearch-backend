@@ -25,7 +25,9 @@ SECRET_KEY = 'pf9yjfld^$w6vo0z4-@pe#0c+14+3-5%&-7inr)d5#19077euv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ec2-18-197-31-208.eu-central-1.compute.amazonaws.com'
+]
 
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -44,17 +46,10 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
-
-
-
 CORS_ORIGIN_WHITELIST = [
-    'localhost:80',
-    'localhost:8000',
-    '127.0.0.1:8000',
-    'localhost:8081',
-    'http://localhost:8081',
-    '127.0.0.1:8081'
+     
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
