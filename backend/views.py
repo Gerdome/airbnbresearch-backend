@@ -29,5 +29,5 @@ class FullScreenListView (ListAPIView):
     serializer_class = FullScreenSerializer
 
 class FullScreenCreateView (CreateAPIView):
-    queryset = EventTracker.objects.all()
+    queryset = FullScreen.objects.all()
     serializer_class = FullScreenSerializer
