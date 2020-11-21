@@ -26,7 +26,8 @@ SECRET_KEY = 'pf9yjfld^$w6vo0z4-@pe#0c+14+3-5%&-7inr)d5#19077euv'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ec2-3-121-239-161.eu-central-1.compute.amazonaws.com'
+    'ec2-3-121-239-161.eu-central-1.compute.amazonaws.com',
+    '127.0.0.1'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'backend',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -66,7 +68,7 @@ ROOT_URLCONF = 'bnbResearchBackend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
